@@ -2,14 +2,7 @@
 session_start();
 include_once('config.php');
 
-if((!isset($_SESSION['email'])) || (!isset($_SESSION['senha']))) {
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    header('Location: login.php');
-    exit(); 
-}
 
-$logado = $_SESSION['email'];
 
 // Verificar se o formulário de ordenação foi enviado
 if(isset($_POST['ordenar_por'])) {
@@ -56,10 +49,13 @@ $result = $conexao->query($sql);
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"><a href="sair.php" class="btn btn-danger">SAIR</a></span>
     </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"><a href="formulario.php" class="btn btn-danger">CADASTRAR</a></span>
+    </button>
 
 
   </nav>
-  <?php echo "<h4>Logado com o e-mail: <u>$logado</u></h4>"; ?>
+  <br>
 
   <!-- Formulário de busca -->
   <div class="search-form">

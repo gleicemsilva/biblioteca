@@ -2,14 +2,7 @@
 session_start();
 include_once('config.php');
 
-if((!isset($_SESSION['email'])) || (!isset($_SESSION['senha']))) {
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    header('Location: login.php');
-    exit(); 
-}
 
-$logado = $_SESSION['email'];
 
 if(isset($_GET['buscar']) && !empty($_GET['buscar'])) {
     $termo = $_GET['buscar'];
@@ -105,13 +98,16 @@ if(isset($_GET['buscar']) && !empty($_GET['buscar'])) {
       <span class="navbar-toggler-icon"><a href="sair.php" class="btn btn-danger">SAIR</a></span>
     </button>
 
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"><a href="sistema.php" class="btn btn-danger">VOLTAR</a></span>
     </button>
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"><a href="formulario.php" class="btn btn-danger">CADASTRAR</a></span>
+    </button>
+
   </nav>
-  <?php echo "<h4>Logado com o e-mail: <u>$logado</u></h4>"; ?>
+  <br>
 
   <!-- Formulário de busca -->
   <div class="search-form">

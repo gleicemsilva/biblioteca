@@ -67,10 +67,10 @@
     font-size: 16px;
   }
 
-  .box a.login {
+  .box a.sistema {
     color: #333;
     background-color: #ffc107;
-    /* Amarelo para o botão "LOGIN" */
+    /* Amarelo para o botão "LIVROS CADASTRADOS" */
     border: 2px solid #ffc107;
   }
 
@@ -114,7 +114,7 @@
     <h2>
       Com nosso sistema você poderá adicionar novos títulos à sua biblioteca de forma rápida e organizada.</h2>
     <div class="box">
-      <a class="login" href="login.php">LOGIN</a>
+      <a class="sistema" href="sistema.php">LIVROS CADASTRADOS</a>
       <a class="cadastrar" href="formulario2.php">CADASTRAR</a>
     </div>
   </div>

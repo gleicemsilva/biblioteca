@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
     } else {
         // ISBN não existe, realizar a inserção no banco de dados
         $result = mysqli_query($conexao, "INSERT INTO livros(cadastrador,id,titulo,autor,editora,genero,ano,edicao,idioma,paginas,disponibilidade,data_aquisicao) VALUES ('$cadastrador','$id','$titulo','$autor','$editora','$genero','$ano','$edicao','$idioma','$paginas','$disponibilidade','$data_aquisicao')");
-        header('Location:sucesso.php');
+        header('Location:sucess.php');
     }
 }
 ?>
@@ -118,7 +118,7 @@ if(isset($_POST['submit']))
   <a href="home.php">Voltar</a>
   <div class="container">
     <h1>Fórmulario de Cadastro</h1>
-    <form action="formulario2.php" method="POST">
+    <form action="formulario.php" method="POST">
       <fieldset>
         <legend>Dados</legend>
 

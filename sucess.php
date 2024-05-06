@@ -105,7 +105,7 @@
   <script>
   // Função para redirecionar após 5 segundos
   setTimeout(function() {
-    window.location.href = "home.php"; // Altere "home.php" para a página para onde você deseja redirecionar
+    window.location.href = "sistema.php"; // Altere "home.php" para a página para onde você deseja redirecionar
   }, 5000); // 5000 milissegundos = 5 segundos
   </script>
 
