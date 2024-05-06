@@ -90,13 +90,11 @@
   <header>
     <h1>Sistema de Cadastro de Livros</h1>
   </header>
-  <br><br><br>
-
   <div class="container">
 
     <div class="box">
 
-      <p>Seu livro foi cadastrado com sucesso. Obrigado!</p>
+      <p>Você está cadastrado com sucesso.</p>
     </div>
   </div>
   <br><br><br>

@@ -115,7 +115,7 @@ if(isset($_POST['submit']))
 </head>
 
 <body>
-  <a href="home.php">Voltar</a>
+  <a href="sistema.php">Voltar</a>
   <div class="container">
     <h1>Fórmulario de Cadastro</h1>
     <form action="formulario.php" method="POST">

@@ -2,7 +2,14 @@
 session_start();
 include_once('config.php');
 
+if((!isset($_SESSION['email'])) || (!isset($_SESSION['senha']))) {
+  unset($_SESSION['email']);
+  unset($_SESSION['senha']);
+  header('Location: login.php');
+  exit(); 
+}
 
+$logado = $_SESSION['email'];
 
 if(isset($_GET['buscar']) && !empty($_GET['buscar'])) {
     $termo = $_GET['buscar'];
@@ -63,7 +70,7 @@ if(isset($_GET['buscar']) && !empty($_GET['buscar'])) {
         }
     }
 } else {
-    // Se o termo de busca não foi fornecido, redirecionar de volta para a página principal
+    // Se o termo de busca não foi fornecido, redirecionar de volta para a página sistema
     header('Location: sistema.php');
     exit();
 }
@@ -93,6 +100,9 @@ if(isset($_GET['buscar']) && !empty($_GET['buscar'])) {
 
 <body>
   <h1>Resultado da Busca</h1>
+
+  <?php echo "<h4>Logado com o e-mail: <u>$logado</u></h4>"; ?>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"><a href="sair.php" class="btn btn-danger">SAIR</a></span>
@@ -105,6 +115,8 @@ if(isset($_GET['buscar']) && !empty($_GET['buscar'])) {
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"><a href="formulario.php" class="btn btn-danger">CADASTRAR</a></span>
     </button>
+
+
 
   </nav>
   <br>

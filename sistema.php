@@ -2,7 +2,14 @@
 session_start();
 include_once('config.php');
 
+if((!isset($_SESSION['email'])) || (!isset($_SESSION['senha']))) {
+  unset($_SESSION['email']);
+  unset($_SESSION['senha']);
+  header('Location: login.php');
+  exit(); 
+}
 
+$logado = $_SESSION['email'];
 
 // Verificar se o formulário de ordenação foi enviado
 if(isset($_POST['ordenar_por'])) {
@@ -45,6 +52,9 @@ $result = $conexao->query($sql);
 
 <body>
   <h1>Livros Cadastrados</h1>
+
+  <?php echo "<h4>Logado com o e-mail: <u>$logado</u></h4>"; ?>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"><a href="sair.php" class="btn btn-danger">SAIR</a></span>
@@ -56,6 +66,7 @@ $result = $conexao->query($sql);
 
   </nav>
   <br>
+
 
   <!-- Formulário de busca -->
   <div class="search-form">
